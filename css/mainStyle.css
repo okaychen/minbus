@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微软雅黑;
+}
+li{
+    list-style: none;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+
+button {
+    border: none;
+    outline: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/**/
+#allmap {
+    width: 100%;
+    height: 82%;
+    border-radius: 10px;
+}
+
+.nav-box {
+    width: 100%;
+    height: 8%;
+    display: inline-block;
+    padding: 10px 0;
+    float: left;
+    background: #f7f7f7;
+    border-radius: 5px;
+    text-shadow: 1px 1px 10px #fff;
+}
+
+.nav-box div {
+    display: inline-block;
+    line-height: 40px;
+    color: #407efe;
+}
+
+.nav-box div:nth-child(1) {
+    text-align: center;
+    width: 15%;
+    float: left;
+    font-size: 18px;
+}
+
+.nav-box div:nth-child(2) {
+    text-align: center;
+    width: 65%;
+    float: left;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nav-box div:nth-child(3) {
+    text-align: left;
+    width: 20%;
+    float: left;
+    line-height: normal;
+    padding-top: 5px;
+}
+
+.nav-box div:nth-child(3) button {
+    height: 30px;
+    background: #f7f7f7;
+    color: #407efe;
+    box-shadow: 1px 1px 1px #407efe;
+}
+
+.nav-box div:nth-child(3) button:hover {
+    border: 1px solid #f7f7f7;
+}
+
+@keyframes moveLeft {
+    to {
+        -webkit-transform: translateX(-100rem);
+        transform: translateX(-100rem)
+    }
+
+}
+
+#carousel {
+    width: 100%;
+    height: 3%;
+    float: left;
+    background: #407efe;
+    position: relative;
+}
+
+#carousel-left span {
+    animation: moveLeft 2s;
+}
+
+@keyframes moveLeft {
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+#carousel div p {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    clear: both;
+    color: #f7f7f7;
+    text-align: center;
+    display: inline-block;
+}
+
+#carousel-left p {
+    animation: moveLeft 8s infinite;
+}
+
+#carousel-right p {
+    animation: moveLeft 8s 3s infinite;
+}
+
+#carousel div:nth-child(1) {
+    width: 60%;
+}
+
+#myModal {
+    height: 800px;
+    width: 80%;
+    margin: 40% auto;
+}
+
+.modal-body button {
+    width: 25%;
+    margin-left: 37.5%;
+    margin: 10px auto;
+}
+
+.modal-body * {
+    margin: 10px auto;
+}
+
+/**/
+.route {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 1px 1px 1px #999;
+    z-index: 1;
+}
+
+.timer-box a{
+    width: 100%;
+    float: left;
+    height: 7%;
+    padding: 3.5% 0;
+    color: #fff;
+    text-align: center;
+    background: #407efe;
+}
+
+/*
+ 个人中心
+*/
+.user-return {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+    font-size: 20px;
+    color: white;
+    background: #428bca;
+}
+.user-return a{
+	color: white;
+}
+.user-header {
+    width: 100%;
+    float: left;
+    height: 100px;
+    background: #428bca;
+}
+
+.user-con {
+    width: 100%;
+    float: left;
+}
+
+.header-left {
+    width: 20%;
+    float: left;
+}
+
+.header-left img {
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+}
+
+.header-center {
+    float: left;
+    width: 50%;
+}
+
+.header-center span {
+    display: inline-block;
+    margin: 20px 10px;
+    color: white;
+}
+
+.header-center p {
+    color: #9bc3fe;
+}
+
+.header-right {
+    float: left;
+    width: 20%;
+}
+
+.header-right button {
+    display: inline-block;
+    height: 30px;
+    width: 65px;
+    color: white;
+    margin: 20px 10px;
+    border: 1px solid #fff;
+    background: #428bca;
+}
+.header-right button a{
+    color: white;
+}
+    /*user-con*/
+.user-con i {
+    padding: 0px 15px;
+}
+
+.user-con div {
+    margin: 50px 0 -30px 0;
+    width: 80%;
+    border-radius: 10px;
+    line-height: 50px;
+    margin-left: 10%;
+    height: 50px;
+    background: #6697fd;
+    box-shadow: 1px 1px 5px #999;
+    color: #fff;
+    position: relative;
+}
+
+.user-con div span {
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+}
+
+#money {
+    display: inline-block;
+    font-size: 12px;
+    padding-left: 20px !important;
+}
+
+.user-footer {
+    width: 100%;
+    padding-top: 20px;
+    float: left;
+    position: absolute;
+    bottom: 0;
+    background: #428bca;
+}
+
+.user-footer div {
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    margin-left: 10%;
+}
+
+.user-footer button {
+    border-radius: 10px;
+    background: #428bca;
+    border: 1px solid #999;
+    width: 60%;
+    color: white;
+    height: 40px;
+}
+
+/*
+用户登录界面
+*/
+.login-header {
+    width: 100%;
+    height: 20%;
+    float: left;
+}
+
+#login {
+    padding-top: 5px;
+    text-align: center;
+    width: 35%;
+}
+
+#your-position {
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 60%;
+}
+
+.allmap {
+    float: left;
+    position: absolute;
+    bottom: 10%;
+}
+
+#exampleModal {
+    width: 86%;
+    margin-left: 7%;
+    top: 70px;
+}
+
+#joinLogin {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#joinLogin div {
+    display: inline-block;
+    position: absolute;
+}
+
+#joinLogin div:nth-child(1) {
+    left: 10px;
+}
+
+#joinLogin div:nth-child(2) {
+    right: 10px;
+}
+/*
+搜索界面
+*/
+.search-pos span{
+    margin: 15px;
+}
+.search_input{
+    position: absolute;
+    top: 100px;
+    z-index:999;
+    width: 60%;
+    height: 30px;
+    opacity: 0.8;
+    left:20%;
+    outline: none;
+    border: none;
+}
+/*
+公交发车路线
+*/
+.busInformation{
+    width:100%;
+    float: left;
+    height: 45%;
+}
+.busInformation ul li{
+    height: auto;
+    line-height: 40px;
+    border-bottom: 2px solid #428bca;
+    font-size: 16px;
+}
+
+.busInformation ul li span{
+    margin-left: 50px;
+}
+.inf-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    float: left;
+    height:7%;
+    background: #428bca;
+}
+.inf-footer ul li {
+    float: left;
+    padding:3.5% 0;
+    width: 33.333%;
+    text-align: center;
+    color: white;
+}
+
+
