@@ -1,111 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   	<meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-		<script src="../static/js/mainJs.js"></script>
-		<script src="../static/js/jquery-3.2.1.min.js"></script>
-		<script src="../static/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="../static/css/mainStyle.css" />
-		<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
-		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="http://api.map.baidu.com/api?v=2.0&ak=SnLQ9dio5MmIOkhwPpW2Fkcx3Dp5MEcV"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script src="../static/js/mainJs.js"></script>
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/css/mainStyle.css" />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=SnLQ9dio5MmIOkhwPpW2Fkcx3Dp5MEcV"></script>
     <title>用户登录</title>
 </head>
+
 <body style="background: #428bca">
-<div class="user-header" style="background: #428bca" >
-    <div class="header-right" id="login">
-        <button type="button" style="background: #428bca" data-toggle="modal" data-target="#exampleModal">请登录</button>
+    <div class="user-header" style="background: #428bca">
+        <div class="header-right" id="login">
+            <button type="button" style="background: #428bca" data-toggle="modal" data-target="#exampleModal">请登录</button>
+        </div>
+        <div class="header-center " id="your-position">
+            <span>当前位置：河南理工大学
+                <br/>
+                <p>目的地：</p>
+            </span>
+        </div>
     </div>
-    <div class="header-center " id="your-position">
-        <span>当前位置：河南理工大学<br/><p>目的地：</p></span>
-    </div>
-</div>
-<!--登录弹出模态框-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">用户登录</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">账号:</label>
-                        <input type="text" placeholder="账号/手机号" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-password" class="control-label">密码:</label>
-                        <input type="password" placeholder="密码" class="form-control" id="recipient-password">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="form-group">
-                    <input type="button" placeholder="登录" class="form-control btn-primary" id="recipient-login" value="登录">
+    <!--登录弹出模态框-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">用户登录</h4>
                 </div>
-                <form action="" method="get" class="text-center">
-                    <input name="Fruit" type="radio" value="" /> 接受服务条款
-                </form>
-            </div>
-            <div class="modal-footer" id="joinLogin">
-                <div>新用户注册</div>
-                <div>忘记密码？</div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">账号:</label>
+                            <input type="text" placeholder="账号/手机号" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-password" class="control-label">密码:</label>
+                            <input type="password" placeholder="密码" class="form-control" id="recipient-password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <input type="button" placeholder="登录" class="form-control btn-primary" id="recipient-login" value="登录">
+                    </div>
+                    <form action="" method="get" class="text-center">
+                        <input name="Fruit" type="radio" value="" /> 接受服务条款
+                    </form>
+                </div>
+                <div class="modal-footer" id="joinLogin">
+                    <div>新用户注册</div>
+                    <div>忘记密码？</div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--map-->
+    <!--map-->
     <div class="login-con">
         <div class="allmap" id="allmap" style="height: 75%;width: 80%;margin-left: 10%"></div>
     </div>
 </body>
+
+<script src="../static/js/map.js"></script>
+
 </html>
-<script type="text/javascript">
-    var map = new BMap.Map("allmap");
-    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-    // 添加带有定位的导航控件
-    var navigationControl = new BMap.NavigationControl({
-        // 靠左上角位置
-        anchor: BMAP_ANCHOR_TOP_LEFT,
-        // LARGE类型
-        type: BMAP_NAVIGATION_CONTROL_LARGE,
-        // 启用显示定位
-        enableGeolocation: true
-    });
-    map.addControl(navigationControl);
-    // 添加定位控件
-    var geolocationControl = new BMap.GeolocationControl();
-    geolocationControl.addEventListener("locationSuccess", function (e) {
-        // 定位成功事件
-        var address = '';
-        address += e.addressComponent.province;
-        address += e.addressComponent.city;
-        address += e.addressComponent.district;
-        address += e.addressComponent.street;
-        address += e.addressComponent.streetNumber;
-        alert("当前定位地址为：" + address);
-    });
-    geolocationControl.addEventListener("locationError", function (e) {
-        // 定位失败事件
-        alert(e.message);
-    });
-    map.addControl(geolocationControl);
-    map.enableScrollWheelZoom();        //启用滚轮
-    map.enablePinchToZoom();  // 启用手指放大缩小
-    //自动定位
-    var geolocation = new BMap.Geolocation();
-    geolocation.getCurrentPosition(function (r) {
-        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-            var mk = new BMap.Marker(r.point);
-            map.addOverlay(mk);
-            map.panTo(r.point);
-            // alert('您的位置：'+r.point.lng+','+r.point.lat);
-        }
-        else {
-            alert('failed' + this.getStatus());
-        }
-    }, {enableHighAccuracy: true})
-</script>

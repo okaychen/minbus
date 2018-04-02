@@ -1,176 +1,170 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-		<script src="../static/js/mainJs.js"></script>
-		<script src="../static/js/jquery-3.2.1.min.js"></script>
-		<script src="../static/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="../static/css/mainStyle.css" />
-		<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
-		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="http://api.map.baidu.com/api?v=2.0&ak=SnLQ9dio5MmIOkhwPpW2Fkcx3Dp5MEcV"></script>
-		<title>时刻表</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script src="../static/js/mainJs.js"></script>
+	<script src="../static/js/jquery-3.2.1.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../static/css/mainStyle.css" />
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=SnLQ9dio5MmIOkhwPpW2Fkcx3Dp5MEcV"></script>
+	<title>时刻表</title>
+</head>
 
-	<body>
-		<!--header-->
-		<div class="user-header" style="background: #428bca;height: 10%;">
-			<div class="header-left">
-				<img style="height: 65px;width:65px;padding:10px;text-align:center" alt="" title="" src="../static/img/icon.jpg" />
-			</div>
-			<div class="header-center search-pos" id="your-position">
-				<span>当前位置：河南理工大学<br/><p>目的地：焦作科技馆</p></span>
-			</div>
+<body>
+	<!--header-->
+	<div class="user-header" style="background: #428bca;height: 10%;">
+		<div class="header-left">
+			<img style="height: 65px;width:65px;padding:10px;text-align:center" alt="" title="" src="../static/img/icon.jpg" />
 		</div>
-		<!--map-->
-		<div id="allmap" style="height: 40%;"></div>
-		<input class="search_input" type="search" placeholder="搜索您的目的地和服务">
-		<div class="route">路况</div>
-		<div class="route" style="margin: 40px auto;">周边</div>
-		<div class="route" style="margin: 80px auto;">
-			<a href="user.html">我</a>
+		<div class="header-center search-pos" id="your-position">
+			<span>当前位置：河南理工大学
+				<br/>
+				<p>目的地：焦作科技馆</p>
+			</span>
 		</div>
-		<!--busInformation-->
-		<div class="busInformation">
-			<ul>
-				<li><span>11路支线</span> <span>最近发车时间：11:30</span>
-					<div class="user-header" style="background: #428bca">
-						<div class="header-center search-pos" id="your-position">
-							<span>终点站：图书馆<br/><p>详细信息</p></span>
-						</div>
-						<div class="header-right" style="line-height: 20px;margin-top: 20px">
-							<button type="button">预约</button>
-						</div>
+	</div>
+	<!--map-->
+	<div id="allmap" style="height: 40%;"></div>
+	<input class="search_input" type="search" placeholder="搜索您的目的地和服务">
+	<div class="route">路况</div>
+	<div class="route" style="margin: 40px auto;">周边</div>
+	<div class="route" style="margin: 80px auto;">
+		<a href="user.html">我</a>
+	</div>
+	<!--busInformation-->
+	<div class="busInformation">
+		<ul>
+			<li>
+				<span>11路支线</span>
+				<span>最近发车时间：11:30</span>
+				<div class="user-header" style="background: #428bca">
+					<div class="header-center search-pos" id="your-position">
+						<span>终点站：图书馆
+							<br/>
+							<p>详细信息</p>
+						</span>
 					</div>
-				</li>
-				<!--1-->
-				<li><span>13路支线</span> <span>最近发车时间：13:30</span>
-					<div class="user-header" style="background: #428bca;display: none">
-						<div class="header-center search-pos" id="your-position">
-							<span>终点站：焦作科技馆<br/><p>详细信息</p></span>
-						</div>
-						<div class="header-right" style="line-height: 20px;margin-top: 20px">
-							<button type="button">预约</button>
-						</div>
+					<div class="header-right" style="line-height: 20px;margin-top: 20px">
+						<button type="button">预约</button>
 					</div>
-				</li>
-				<!--2-->
-				<li><span>16路支线</span> <span>最近发车时间：14:30</span>
-					<div class="user-header" style="background: #428bca;display: none">
-						<div class="header-center search-pos" id="your-position">
-							<span>终点站：龙源湖<br/><p>详细信息</p></span>
-						</div>
-						<div class="header-right" style="line-height: 20px;margin-top: 20px">
-							<button type="button">预约</button>
-						</div>
+				</div>
+			</li>
+			<!--1-->
+			<li>
+				<span>13路支线</span>
+				<span>最近发车时间：13:30</span>
+				<div class="user-header" style="background: #428bca;display: none">
+					<div class="header-center search-pos" id="your-position">
+						<span>终点站：焦作科技馆
+							<br/>
+							<p>详细信息</p>
+						</span>
 					</div>
-				</li>
-				<!--3-->
-				<li><span>17路支线</span> <span>最近发车时间：15:30</span>
-					<div class="user-header" style="background: #428bca;display: none">
-						<div class="header-center search-pos" id="your-position">
-							<span>终点站：奥斯卡影城<br/><p>详细信息</p></span>
-						</div>
-						<div class="header-right" style="line-height: 20px;margin-top: 20px">
-							<button type="button">预约</button>
-						</div>
+					<div class="header-right" style="line-height: 20px;margin-top: 20px">
+						<button type="button">预约</button>
 					</div>
-				</li>
-				<!--4-->
-				<li><span>19路支线</span> <span>最近发车时间：17:30</span>
-					<div class="user-header" style="background: #428bca;display: none">
-						<div class="header-center search-pos" id="your-position">
-							<span>终点站：图书馆<br/><p>详细信息</p></span>
-						</div>
-						<div class="header-right" style="line-height: 20px;margin-top: 20px">
-							<button type="button">预约</button>
-						</div>
+				</div>
+			</li>
+			<!--2-->
+			<li>
+				<span>16路支线</span>
+				<span>最近发车时间：14:30</span>
+				<div class="user-header" style="background: #428bca;display: none">
+					<div class="header-center search-pos" id="your-position">
+						<span>终点站：龙源湖
+							<br/>
+							<p>详细信息</p>
+						</span>
 					</div>
-				</li>
-				<!--5-->
-				<li><span>21路支线</span> <span>最近发车时间：13:30</span>
-					<div class="user-header" style="background: #428bca;display: none">
-						<div class="header-center search-pos" id="your-position">
-							<span>终点站：图书馆<br/><p>详细信息</p></span>
-						</div>
-						<div class="header-right" style="line-height: 20px;margin-top: 20px">
-							<button type="button">预约</button>
-						</div>
+					<div class="header-right" style="line-height: 20px;margin-top: 20px">
+						<button type="button">预约</button>
 					</div>
-				</li>
-				<!--6-->
-				<li><span>31路支线</span> <span>最近发车时间：12:30</span>
-					<div class="user-header" style="background: #428bca;display: none">
-						<div class="header-center search-pos" id="your-position">
-							<span>终点站：龙源湖<br/><p>详细信息</p></span>
-						</div>
-						<div class="header-right" style="line-height: 20px;margin-top: 20px">
-							<button type="button">预约</button>
-						</div>
+				</div>
+			</li>
+			<!--3-->
+			<li>
+				<span>17路支线</span>
+				<span>最近发车时间：15:30</span>
+				<div class="user-header" style="background: #428bca;display: none">
+					<div class="header-center search-pos" id="your-position">
+						<span>终点站：奥斯卡影城
+							<br/>
+							<p>详细信息</p>
+						</span>
 					</div>
-				</li>
-				<!--7-->
-				<li><span>查看更多...</span></li>
+					<div class="header-right" style="line-height: 20px;margin-top: 20px">
+						<button type="button">预约</button>
+					</div>
+				</div>
+			</li>
+			<!--4-->
+			<li>
+				<span>19路支线</span>
+				<span>最近发车时间：17:30</span>
+				<div class="user-header" style="background: #428bca;display: none">
+					<div class="header-center search-pos" id="your-position">
+						<span>终点站：图书馆
+							<br/>
+							<p>详细信息</p>
+						</span>
+					</div>
+					<div class="header-right" style="line-height: 20px;margin-top: 20px">
+						<button type="button">预约</button>
+					</div>
+				</div>
+			</li>
+			<!--5-->
+			<li>
+				<span>21路支线</span>
+				<span>最近发车时间：13:30</span>
+				<div class="user-header" style="background: #428bca;display: none">
+					<div class="header-center search-pos" id="your-position">
+						<span>终点站：图书馆
+							<br/>
+							<p>详细信息</p>
+						</span>
+					</div>
+					<div class="header-right" style="line-height: 20px;margin-top: 20px">
+						<button type="button">预约</button>
+					</div>
+				</div>
+			</li>
+			<!--6-->
+			<li>
+				<span>31路支线</span>
+				<span>最近发车时间：12:30</span>
+				<div class="user-header" style="background: #428bca;display: none">
+					<div class="header-center search-pos" id="your-position">
+						<span>终点站：龙源湖
+							<br/>
+							<p>详细信息</p>
+						</span>
+					</div>
+					<div class="header-right" style="line-height: 20px;margin-top: 20px">
+						<button type="button">预约</button>
+					</div>
+				</div>
+			</li>
+			<!--7-->
+			<li>
+				<span>查看更多...</span>
+			</li>
 
-			</ul>
-		</div>
-		<div class="inf-footer">
-			<ul>
-				<li>上车付费</li>
-				<li>我的订单</li>
-				<li>个人中心</li>
-			</ul>
-		</div>
-	</body>
+		</ul>
+	</div>
+	<div class="inf-footer">
+		<ul>
+			<li>上车付费</li>
+			<li>我的订单</li>
+			<li>个人中心</li>
+		</ul>
+	</div>
+</body>
+<script src="../static/js/map.js"></script>
 
 </html>
-<script type="text/javascript">
-	var map = new BMap.Map("allmap");
-	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-	// 添加带有定位的导航控件
-	var navigationControl = new BMap.NavigationControl({
-		// 靠左上角位置
-		anchor: BMAP_ANCHOR_TOP_LEFT,
-		// LARGE类型
-		type: BMAP_NAVIGATION_CONTROL_LARGE,
-		// 启用显示定位
-		enableGeolocation: true
-	});
-	map.addControl(navigationControl);
-	// 添加定位控件
-	var geolocationControl = new BMap.GeolocationControl();
-	geolocationControl.addEventListener("locationSuccess", function(e) {
-		// 定位成功事件
-		var address = '';
-		address += e.addressComponent.province;
-		address += e.addressComponent.city;
-		address += e.addressComponent.district;
-		address += e.addressComponent.street;
-		address += e.addressComponent.streetNumber;
-		alert("当前定位地址为：" + address);
-	});
-	geolocationControl.addEventListener("locationError", function(e) {
-		// 定位失败事件
-		alert(e.message);
-	});
-	map.addControl(geolocationControl);
-	map.enableScrollWheelZoom(); //启用滚轮
-	map.enablePinchToZoom(); // 启用手指放大缩小
-	//自动定位
-	var geolocation = new BMap.Geolocation();
-	geolocation.getCurrentPosition(function(r) {
-		if(this.getStatus() == BMAP_STATUS_SUCCESS) {
-			var mk = new BMap.Marker(r.point);
-			map.addOverlay(mk);
-			map.panTo(r.point);
-			// alert('您的位置：'+r.point.lng+','+r.point.lat);
-		} else {
-			alert('failed' + this.getStatus());
-		}
-	}, {
-		enableHighAccuracy: true
-	})
-</script>
